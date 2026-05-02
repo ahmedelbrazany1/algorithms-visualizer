@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ECU Algorithms Visualizer — Design System
+   All colors HSL. Dark, premium, academic-modern. */
+
+@layer base {
+  :root {
+    --background: 230 30% 7%;
+    --foreground: 220 20% 96%;
+
+    --card: 230 28% 10%;
+    --card-foreground: 220 20% 96%;
+
+    --popover: 230 30% 9%;
+    --popover-foreground: 220 20% 96%;
+
+    /* ECU red as primary brand */
+    --primary: 0 78% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 0 90% 65%;
+
+    --secondary: 230 25% 16%;
+    --secondary-foreground: 220 20% 96%;
+
+    --muted: 230 20% 14%;
+    --muted-foreground: 220 12% 65%;
+
+    /* Cyan accent for cool highlights */
+    --accent: 188 90% 55%;
+    --accent-foreground: 230 30% 8%;
+
+    --success: 142 70% 48%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 95% 58%;
+    --warning-foreground: 230 30% 8%;
+
+    --destructive: 0 78% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 230 20% 18%;
+    --input: 230 20% 16%;
+    --ring: 0 78% 55%;
+
+    --radius: 0.9rem;
+
+    /* Visualizer state colors */
+    --viz-default: 230 25% 22%;
+    --viz-active: 188 90% 55%;
+    --viz-compare: 38 95% 58%;
+    --viz-pivot: 280 80% 65%;
+    --viz-sorted: 142 70% 48%;
+    --viz-found: 142 80% 55%;
+    --viz-discarded: 230 15% 20%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(0 78% 55%), hsl(15 90% 60%));
+    --gradient-accent: linear-gradient(135deg, hsl(188 90% 55%), hsl(220 90% 65%));
+    --gradient-hero: radial-gradient(ellipse at top, hsl(0 78% 55% / 0.18), transparent 60%),
+                     radial-gradient(ellipse at bottom, hsl(188 90% 55% / 0.12), transparent 60%);
+    --gradient-card: linear-gradient(145deg, hsl(230 28% 12% / 0.9), hsl(230 30% 8% / 0.9));
+    --gradient-glow: radial-gradient(circle, hsl(0 78% 55% / 0.35), transparent 70%);
+
+    /* Shadows */
+    --shadow-elegant: 0 20px 50px -20px hsl(0 78% 55% / 0.35);
+    --shadow-soft: 0 10px 30px -15px hsl(230 50% 4% / 0.6);
+    --shadow-glow: 0 0 40px hsl(0 90% 65% / 0.4);
+    --shadow-accent-glow: 0 0 40px hsl(188 90% 55% / 0.35);
+
+    --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+
+    --sidebar-background: 230 30% 8%;
+    --sidebar-foreground: 220 20% 90%;
+    --sidebar-primary: 0 78% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 230 25% 14%;
+    --sidebar-accent-foreground: 220 20% 96%;
+    --sidebar-border: 230 20% 16%;
+    --sidebar-ring: 0 78% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html, body, #root {
+    @apply h-full;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-image:
+      radial-gradient(circle at 15% 10%, hsl(0 78% 55% / 0.10), transparent 45%),
+      radial-gradient(circle at 85% 90%, hsl(188 90% 55% / 0.08), transparent 50%);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply backdrop-blur-xl bg-card/60 border border-border/60;
+  }
+  .glass-strong {
+    @apply backdrop-blur-2xl bg-card/80 border border-border/80;
+  }
+  .text-gradient-primary {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .text-gradient-accent {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .grid-bg {
+    background-image:
+      linear-gradient(hsl(var(--border) / 0.4) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.4) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  }
+  .scrollbar-thin::-webkit-scrollbar { width: 8px; height: 8px; }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 8px;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
