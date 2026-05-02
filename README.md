@@ -84,16 +84,16 @@ docs/images/
 Suggested image names:
 
 ### Home Page
-![Home](docs/images/home.png)
-`
+![Home](https://raw.githubusercontent.com/ahmedelbrazany1/algorithms-visualizer/main/public/showcase_1.png)
+
 ### Searching Page
-![Searching](docs/images/searching.png)
+![Searching](https://raw.githubusercontent.com/ahmedelbrazany1/algorithms-visualizer/main/public/showcase_2.png)
 
 ### Sorting Page
-![Sorting](docs/images/sorting.png)
+![Sorting](https://raw.githubusercontent.com/ahmedelbrazany1/algorithms-visualizer/main/public/showcase_3.png)
 
 ### Controls and Buttons
-![Controls](docs/images/controls.png)
+![Controls](https://raw.githubusercontent.com/ahmedelbrazany1/algorithms-visualizer/main/public/showcase_4.png)
 
 ## Tech Stack
 - React + TypeScript
